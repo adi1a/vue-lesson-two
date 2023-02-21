@@ -1,29 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <NumbersComponent />
+    
+    <br>
+
+    <ShowText />
+    
+
+    
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import NumbersComponent from '../src/components/Numbers.vue';
+import ShowText from '../src/components/ShowText.vue';
+
+interface Data {
+  // products:  IProduct[];
+}
 
 export default Vue.extend({
   name: 'App',
+  data: (): Data => ({
+   isVisible: true,
+
+   activeBtn: true,
+  }),
+
   components: {
-    HelloWorld
+    NumbersComponent, 
+    ShowText
   }
 });
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
